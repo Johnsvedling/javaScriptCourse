@@ -194,7 +194,7 @@ if (BMImark > BMIjohn) {
 } else {
     console.log(`John's BMI(${BMIjohn}) is higher than Mark's!`)
 }
-*/
+
 
 // type conversion
 const inputYear = '1991';
@@ -215,5 +215,114 @@ console.log('23' > '18');
 let n = '1' + 1; // '11'
 n = n - 1; // 11 - 1 = 10
 console.log(n);
+
+
+// 5 falsy values: 0, '', undefined, null, NaN
+
+console.log(Boolean(0));
+console.log(Boolean(undefined));
+console.log(Boolean('jonas'));
+console.log(Boolean({}));
+console.log(Boolean(''));
+
+// 0 zero is a falsy value, thats why it will choose the else statement. money contains the boolean. If i change money to any number than 0 it will become truthy and so the if statement will be chosen instead
+
+const money = 0;
+if (money) {
+    console.log("Don't spend it all ;)");
+} else {
+    console.log('You should get a job');
+}
+
+let height = 0;
+if (height) {
+    console.log('YAY! Height is defined');
+} else {
+    console.log('Height is UNDEFINED');
+}
+
+
+// === is called strict equal because it is not able to do type coersion and thats the difference between it and the lose equal == that is able to do type coersion
+const age = '18';
+if (age === 18) console.log('You just became an adult(strict)');
+
+if (age == 18) console.log('You just became an adult (loose)');
+
+const favourite = Number(prompt("what's your favorite number?"));
+console.log(favourite);
+console.log(typeof favourite);
+
+if (favourite === 23) { // 22 === 23 -> FALSE
+    console.log('Cool! 23 is an amazing number!')
+} else if (favourite === 7) {
+    console.log('7 is also a cool number!')
+} else if (favourite === 9) {
+    console.log('9 is also a cool number!')
+} else {
+    console.log('Number is not 23 or 7 or 9');
+}
+
+if (favourite !== 23) console.log('Why not 23?');
+
+
+const hasDriversLicense = true; // A
+const hasGoodVision = true; // B
+
+// && = AND || = OR ! = NOT
+console.log(hasDriversLicense && hasGoodVision);
+console.log(hasDriversLicense || hasGoodVision);
+console.log(!hasDriversLicense);
+
+
+// if (hasDriversLicense && hasGoodVision) {
+//     console.log('Sarah is able to drive')
+// } else {
+//     console.log('Someone else should drive...');
+// }
+
+const isTired = false; // C
+console.log(hasDriversLicense && hasGoodVision && isTired);
+
+if (hasDriversLicense && hasGoodVision && !isTired) {
+    console.log('Sarah is able to drive');
+} else {
+    console.log('Someone else should drive...');
+}
+*/
+
+///////////
+// CODING CHALLENGE #3
+
+// const dolhpineTotalScore = 96 + 108 + 89;
+// const koalasTotalScore = 88 + 91 + 110;
+
+// const dolhpineAverageScore = dolhpineTotalScore / 3;
+// const koalasAverageScore = koalasTotalScore / 3;
+
+// if (dolhpineAverageScore > koalasAverageScore) {
+//     console.log("Congratulations Dolhpine's!");
+// } else if (dolhpineAverageScore < koalasAverageScore) {
+//     console.log('Congratulations Koalas!');
+// } else {
+//     (dolhpineAverageScore === koalasAverageScore);
+//     console.log("It's a tie!");
+// }
+
+// Bonus 1
+const dolhpineAverageScore = (97 + 112 + 81) / 3;
+const koalasAverageScore = (109 + 95 + 86) / 3;
+console.log(dolhpineAverageScore, koalasAverageScore);
+
+if (dolhpineAverageScore > koalasAverageScore && dolhpineAverageScore >= 100) {
+    console.log("Congratulations Dolhpine's!");
+} else if (dolhpineAverageScore < koalasAverageScore && koalasAverageScore >= 100) {
+    console.log('Congratulations Koalas!');
+} else if (dolhpineAverageScore === koalasAverageScore && dolhpineAverageScore >= 100 && koalasAverageScore >= 100) {
+    console.log("It's a tie!");
+} else {
+    console.log('No one win!');
+}
+
+
 
 
