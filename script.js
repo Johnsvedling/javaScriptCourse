@@ -61,7 +61,6 @@ job = 'teacher'
 
 lastName = 'schmedtmann';
 console.log(lastName);
-*/
 
 // Math operators
 const now = 2037;
@@ -92,3 +91,76 @@ console.log(ageSarah >= 18);
 const isFullAge = ageSarah >= 18;
 
 console.log(now - 1991 > now - 2018);
+
+
+const now = 2037;
+const ageJonas = now - 1991;
+const ageSarah = now - 2018;
+console.log(ageJonas, ageSarah);
+
+console.log(now - 1991 > now - 2018);
+
+
+
+let x, y;
+x = y = 25 - 10 - 5; // x = y = 10, x = 10
+console.log(x, y);
+const averageAge = (ageJonas + ageSarah) / 2
+console.log(ageJonas, ageSarah, averageAge);
+
+
+/////
+//Coding Challenge #1
+
+// const weightMark = 78;
+// const heightMark = 1.69;
+// console.log(weightMark / heightMark ** 2);
+// const weightJohn = 92;
+// const heightJohn = 1.95;
+// console.log(weightJohn / heightJohn ** 2);
+
+const weightMark = 95;
+const heightMark = 1.88;
+const weightJohn = 85;
+const heightJohn = 1.76;
+
+const BMImark = weightMark / heightMark ** 2;
+const BMIjohn = weightJohn / heightJohn ** 2
+
+
+const markHigherBMI = BMImark > BMIjohn;
+
+console.log(BMImark, BMIjohn, markHigherBMI)
+
+
+const firstName = 'Jonas';
+const job = 'teacher';
+const birthYear = 1991;
+const year = 2037;
+
+const jonas = "I'm " + firstName + ', a ' + (year - birthYear) + ' years old ' + job + '!';
+
+console.log(jonas);
+
+const jonasNew = `I'm ${firstName}, a ${year - birthYear} years old ${job}!`;
+console.log(jonasNew);
+
+console.log(`Just a regular string..`);
+
+console.log('String with \n\
+muliple \n\
+lines');
+
+console.log(`String
+with
+muiltiple
+lines`);
+*/
+
+
+
+
+
+
+
+
