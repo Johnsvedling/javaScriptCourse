@@ -1,328 +1,336 @@
-
+'use strict';
 /*
-let js = 'amazing';
-console.log(40 + 8 + 23 - 10);
+let hasDriversLicense = false;
+const passTest = true;
 
-console.log('Jonas');
-console.log(23);
+if (passTest) hasDriversLicense = true;
+if (hasDriversLicense) console.log('I can drive');
 
-let firstName = 'Matilda';
-
-console.log(firstName);
-console.log(firstName);
-console.log(firstName);
-
-let Jonas_matilda = 'JM';
-let _function = 27;
-
-// variable name conventions
-let person = 'jonas';
-let PI = 3.1415;
-
-let myFirstJob = 'coder';
-let myCurrentJob = 'Teacher';
-
-let job1 = 'programmer';
-let job2 = 'Teacher';
-
-console.log(myFirstJob);
+// const interface = 'audio';
+// const private = 543;
 
 
-let javascriptIsFun = true;
-console.log(javascriptIsFun);
+function logger() {
+    console.log('My name is Jonas');
+}
+// calling / running / invoking function
+logger();
+logger();
+logger();
 
-// console.log(typeof true);
-console.log(typeof javascriptIsFun);
-// console.log(typeof 23);
-// console.log(typeof 'Jonas');
-
-javascriptIsFun = 'YES!';
-console.log(typeof javascriptIsFun);
-
-let year;
-console.log(year);
-console.log(typeof year);
-
-year = 1991;
-console.log(typeof year);
-
-console.log(typeof null);
-
-let age = 30;
-age = 31;
-
-const birthYear = 1991;
-// birthYear = 1990;
-
-// const job;
-
-var job = 'programmer'
-job = 'teacher'
-
-lastName = 'schmedtmann';
-console.log(lastName);
-
-// Math operators
-const now = 2037;
-const ageJonas = now - 1991;
-const ageSarah = now - 2018;
-console.log(ageJonas, ageSarah);
-
-console.log(ageJonas * 2, ageJonas / 10, 2 ** 3);
-// 2 ** 3 means 2 to the power of 3 = 2 * 2 * 2
-
-const firstName = 'Jonas';
-const lastName = 'Schmedtmann';
-console.log(firstName + ' ' + lastName);
-
-// Assignment operators
-let x = 10 + 5; // 15
-x += 10; // x = x + 10 = 25
-x *= 4; // x = x * 4 = 100
-x++; // x = x + 1
-x--;
-x--;
-console.log(x);
-
-//Comparison operators
-console.log(ageJonas > ageSarah); // >, <, >=, <=
-console.log(ageSarah >= 18);
-
-const isFullAge = ageSarah >= 18;
-
-console.log(now - 1991 > now - 2018);
-
-
-const now = 2037;
-const ageJonas = now - 1991;
-const ageSarah = now - 2018;
-console.log(ageJonas, ageSarah);
-
-console.log(now - 1991 > now - 2018);
-
-
-
-let x, y;
-x = y = 25 - 10 - 5; // x = y = 10, x = 10
-console.log(x, y);
-const averageAge = (ageJonas + ageSarah) / 2
-console.log(ageJonas, ageSarah, averageAge);
-
-
-/////
-//Coding Challenge #1
-
-// const weightMark = 78;
-// const heightMark = 1.69;
-// console.log(weightMark / heightMark ** 2);
-// const weightJohn = 92;
-// const heightJohn = 1.95;
-// console.log(weightJohn / heightJohn ** 2);
-
-const weightMark = 95;
-const heightMark = 1.88;
-const weightJohn = 85;
-const heightJohn = 1.76;
-
-const BMImark = weightMark / heightMark ** 2;
-const BMIjohn = weightJohn / heightJohn ** 2
-
-
-const markHigherBMI = BMImark > BMIjohn;
-
-console.log(BMImark, BMIjohn, markHigherBMI)
-
-
-const firstName = 'Jonas';
-const job = 'teacher';
-const birthYear = 1991;
-const year = 2037;
-
-const jonas = "I'm " + firstName + ', a ' + (year - birthYear) + ' years old ' + job + '!';
-
-console.log(jonas);
-
-const jonasNew = `I'm ${firstName}, a ${year - birthYear} years old ${job}!`;
-console.log(jonasNew);
-
-console.log(`Just a regular string..`);
-
-console.log('String with \n\
-muliple \n\
-lines');
-
-console.log(`String
-with
-muiltiple
-lines`);
-
-
-const age = 15;
-
-if (age >= 18) {
-    console.log('Sarah can start driving license 🚗')
-} else {
-    const yearsLeft = 18 - age;
-    console.log(`Sarah is too young. wait another ${yearsLeft} years :)`);
+function fruitProcessor(apples, oranges) {
+    const juice = `Juice with ${apples} apples and ${oranges} oranges.`;
+    return juice;
 }
 
-const birthYear = 2012;
-let century;
-if (birthYear <= 2000) {
-    century = 20;
-} else {
-    century = 21;
+const appleJuice = fruitProcessor(5, 0);
+console.log(appleJuice);
+
+const appleOrangJuice = fruitProcessor(2, 4);
+console.log(appleOrangJuice);
+
+
+
+// Function declaration
+function calcAge1(birthYear) {
+    return 2037 - birthYear;
 }
-console.log(century);
+const age1 = calcAge1(1991);
+
+// Function expression
+const calcAge2 = function (birthYear) {
+    return 2037 - birthYear;
+}
+const age2 = calcAge2(1991);
+
+console.log(age1, age2);
+
+
+// Arrow function
+const calcAge3 = birthYear => 2037 - birthYear;
+const age3 = calcAge3(1991);
+console.log(age3);
+
+const yearsUntilRetirement = (birthYear, firstName) => {
+    const age = 2037 - birthYear;
+    const retirement = 65 - age;
+    // return retirement;
+    return `${firstName} retires in ${retirement} years`
+}
+
+console.log(yearsUntilRetirement(1991, 'Jonas'));
+console.log(yearsUntilRetirement(1980, 'Bob'));
+
+
+function cutFruitPieces(fruit) {
+    return fruit * 4;
+};
+
+function fruitProcessor(apples, oranges) {
+    const applePieces = cutFruitPieces(apples);
+    const orangePieces = cutFruitPieces(oranges);
+
+    const juice = `Juice with ${applePieces} pieces of apple and ${orangePieces} pieces orange`;
+    return juice;
+};
+
+console.log(fruitProcessor(2, 3));
+
+
+const calcAge = function (birthYear) {
+    return 2037 - birthYear
+}
+
+const yearsUntilRetirement = function (birthYear, firstName) {
+    const age = calcAge(birthYear);
+    const retirement = 65 - age;
+
+
+    if (retirement > 0) {
+        console.log(`${firstName} retires in ${retirement} years`);
+        return retirement;
+    } else {
+        console.log(`${firstName} has already retired`);
+        return -1;
+    }
+}
+console.log(yearsUntilRetirement(1991, 'Jonas'));
+console.log(yearsUntilRetirement(1950, 'Mike'));
 
 
 //////
-//Coding Challenge #2
+// Coding challenge #1
 
-const weightMark = 95;
-const heightMark = 1.88;
-const weightJohn = 85;
-const heightJohn = 1.76;
 
-const BMImark = weightMark / heightMark ** 2;
-const BMIjohn = weightJohn / heightJohn ** 2
 
-console.log(BMImark, BMIjohn);
 
-if (BMImark > BMIjohn) {
-    console.log(`Mark's BMI(${BMImark}) is higher than John's!`)
-} else {
-    console.log(`John's BMI(${BMIjohn}) is higher than Mark's!`)
+
+
+// const calcAverage = (a, b, c) => (a + b + c) / 3;
+// console.log(calcAverage(44, 23, 71));
+
+const avgDolphins = (a, b, c) => (a + b + c) / 3;
+// console.log(avgDolphins(44, 23, 71));
+
+const avgKoalas = (a, b, c) => (a + b + c) / 3;
+// console.log(avgKoalas(65, 54, 49));
+
+const checkWinner = function (avgDolphins, avgKoalas) {
+    if (avgDolphins > avgKoalas) {
+        console.log(`Dolpins win ${avgDolphins} vs ${avgKoalas}`)
+    } else if
+        console.log(`Koalas win ${avgKoalas} vs ${avgDolphins}`);
+}
+
+console.log(checkWinner(avgDolphins, avgKoalas));
+
+function logger() {
+    console.log('My name is Jonas');
+}
+// calling / running / invoking function
+logger();
+logger();
+logger();
+
+function fruitProcessor(apples, oranges) {
+    const juice = `Juice with ${apples} apples and ${oranges} oranges.`;
+    return juice;
+}
+
+const appleJuice = fruitProcessor(5, 0);
+console.log(appleJuice);
+
+const appleOrangJuice = fruitProcessor(2, 4);
+console.log(appleOrangJuice);
+
+//function declaration
+function calcAge1(birthYear) {
+    return 2037 - birthYear;
+}
+
+const age1 = calcAge1(1989);
+console.log(age1);
+
+
+//function expression / it's an expression because the function is trapped inside a varible, in this example it is const calcAge2 and the function is the value of that varible
+const calcAge2 = function (birthYear) {
+    return 2037 - birthYear;
+}
+const age2 = calcAge2(1991);
+
+console.log(age1, age2);
+
+
+//Arrow function, good to use when you have one function and one line of code.
+const calcAge3 = birthYear => 2037 - birthYear;
+const age3 = calcAge3(1991);
+console.log(age3);
+
+const yearsUntilRetirement = (birthYear, firstName) => {
+    const age = 2037 - birthYear
+    const retirement = 65 - age;
+    // return retirement
+    return `${firstName} retires in ${retirement} years`;
+}
+
+console.log(yearsUntilRetirement(1991, 'Jonas'));
+console.log(yearsUntilRetirement(1980, 'Bob'));
+
+
+function cutFruitPieces(fruit) {
+    return fruit * 4;
+}
+
+function fruitProcessor(apples, oranges) {
+    const applepieces = cutFruitPieces(apples);
+    const orangePieces = cutFruitPieces(oranges);
+
+    const juice = `Juice with ${applepieces} pieces of apple and ${orangePieces} pieces of orange.`;
+    return juice;
+}
+console.log(fruitProcessor(2, 3));
+
+
+const calcAge = function (birthYear) {
+    return 2037 - birthYear
+}
+
+const yearsUntilRetirement = function (birthYear, firstName) {
+    const age = calcAge(birthYear)
+    const retirement = 65 - age;
+
+    if (retirement > 0) {
+        console.log(`${firstName} retires in ${retirement} years`);
+        return retirement
+    } else {
+        console.log(`${firstName} has already retired`);
+        return -1;
+    }
+}
+
+console.log(yearsUntilRetirement(1991, 'Jonas'));
+console.log(yearsUntilRetirement(1950, 'Mike'));
+
+
+///////////////
+/// Coding Challenge #1
+
+const calcAverage = (a, b, c) => (a + b + c) / 3;
+
+let scoreDolphins = calcAverage(44, 23, 71);
+let scoreKoalas = calcAverage(65, 54, 49);
+console.log(scoreDolphins, scoreKoalas);
+
+const checkWinner = function (avgDolphins, avgKoalas) {
+    if (avgDolphins >= 2 * avgKoalas) {
+        console.log(`Dolphins win (${avgDolphins} vs. ${avgKoalas}) `);
+    } else if (avgKoalas >= 2 * avgDolphins) {
+        console.log(`Koalas win (${avgKoalas} vs. ${avgDolphins})`);
+    } else {
+        console.log('No one Wins!')
+    }
+}
+
+checkWinner(scoreDolphins, scoreKoalas);
+
+scoreDolphins = calcAverage(85, 54, 41);
+scoreKoalas = calcAverage(23, 34, 27);
+console.log(scoreDolphins, scoreKoalas);
+
+checkWinner(scoreDolphins, scoreKoalas)
+
+
+const friend1 = 'Michael';
+const friend2 = 'Steven';
+const friend3 = 'Peter';
+
+const friends = ['Michael', 'Steven', 'Peter']
+console.log(friends);
+
+
+const y = new Array(1991, 1984, 2008, 2020);
+
+console.log(friends[0]);
+console.log(friends[2]);
+
+console.log(friends.length);
+console.log(friends[friends.length - 1]);
+
+friends[2] = 'Jay';
+console.log(friends);
+
+// friends = ['Bob', 'Alice']
+
+
+const firstName = 'Jonas'
+const jonas = [firstName, 'Schmedtmann', 2037 - 1991, 'teacher', friends]
+console.log(jonas)
+
+
+/// Exercise
+const calcAge = function (birthYear) {
+    return 2037 - birthYear
+}
+const years = [1990, 1967, 2002, 2010, 2018];
+
+const age1 = calcAge(years[0]);
+const age2 = calcAge(years[1]);
+const age3 = calcAge(years[years.length - 1]);
+console.log(age1, age2, age3);
+
+const ages = [calcAge(years[0]), calcAge(years[1]), calcAge(years[years.length - 1])]
+
+console.log(ages);
+
+
+const friends = ['Michael', 'Steven', 'Peter'];
+
+// Add elements
+const newLength = friends.push('Jay');
+console.log(friends);
+console.log(newLength);
+
+friends.unshift('John');
+console.log(friends);
+
+// Remove elements
+friends.pop();// Last element
+const popped = friends.pop();
+console.log(popped);
+console.log(friends);
+
+friends.shift(); // First
+console.log(friends);
+
+console.log(friends.indexOf('Steven'));
+console.log(friends.indexOf('Bob'));
+
+friends.push(23);
+console.log(friends.includes('Steven'))
+console.log(friends.includes('Bob'));
+console.log(friends.includes(23));
+
+if (friends.includes('Steven')) {
+    console.log('You have a friend called Steven')
 }
 
 
-// type conversion
-const inputYear = '1991';
-console.log(Number(inputYear), inputYear);
-console.log(Number(inputYear) + 18);
+//////////////////
+/// Coding challenge #2
 
-console.log(Number('Jonas'));
-console.log(typeof NaN);
-
-console.log(String(23), 23);
-
-// type coercion
-console.log('I am ' + 23 + ' years old');
-console.log('23' - '10' - 3);
-console.log('23' / '2');
-console.log('23' > '18');
-
-let n = '1' + 1; // '11'
-n = n - 1; // 11 - 1 = 10
-console.log(n);
-
-
-// 5 falsy values: 0, '', undefined, null, NaN
-
-console.log(Boolean(0));
-console.log(Boolean(undefined));
-console.log(Boolean('jonas'));
-console.log(Boolean({}));
-console.log(Boolean(''));
-
-// 0 zero is a falsy value, thats why it will choose the else statement. money contains the boolean. If i change money to any number than 0 it will become truthy and so the if statement will be chosen instead
-
-const money = 0;
-if (money) {
-    console.log("Don't spend it all ;)");
-} else {
-    console.log('You should get a job');
+const calcTip = bill => {
+    if (bill >= 50 && bill <= 300) {
+        return bill * 0.15
+    } else {
+        return bill * 0.2
+    }
 }
 
-let height = 0;
-if (height) {
-    console.log('YAY! Height is defined');
-} else {
-    console.log('Height is UNDEFINED');
-}
+const bills = [125, 555, 44];
+const tips = [calcTip(bills[0]), calcTip(bills[1]), calcTip(bills[2])];
+const totals = [bills[0] + tips[0], bills[1] + tips[1], bills[2] + tips[2]];
 
-
-// === is called strict equal because it is not able to do type coersion and thats the difference between it and the lose equal == that is able to do type coersion
-const age = '18';
-if (age === 18) console.log('You just became an adult(strict)');
-
-if (age == 18) console.log('You just became an adult (loose)');
-
-const favourite = Number(prompt("what's your favorite number?"));
-console.log(favourite);
-console.log(typeof favourite);
-
-if (favourite === 23) { // 22 === 23 -> FALSE
-    console.log('Cool! 23 is an amazing number!')
-} else if (favourite === 7) {
-    console.log('7 is also a cool number!')
-} else if (favourite === 9) {
-    console.log('9 is also a cool number!')
-} else {
-    console.log('Number is not 23 or 7 or 9');
-}
-
-if (favourite !== 23) console.log('Why not 23?');
-
-
-const hasDriversLicense = true; // A
-const hasGoodVision = true; // B
-
-// && = AND || = OR ! = NOT
-console.log(hasDriversLicense && hasGoodVision);
-console.log(hasDriversLicense || hasGoodVision);
-console.log(!hasDriversLicense);
-
-
-// if (hasDriversLicense && hasGoodVision) {
-//     console.log('Sarah is able to drive')
-// } else {
-//     console.log('Someone else should drive...');
-// }
-
-const isTired = false; // C
-console.log(hasDriversLicense && hasGoodVision && isTired);
-
-if (hasDriversLicense && hasGoodVision && !isTired) {
-    console.log('Sarah is able to drive');
-} else {
-    console.log('Someone else should drive...');
-}
+console.log(totals);
 */
-
-///////////
-// CODING CHALLENGE #3
-
-// const dolhpineTotalScore = 96 + 108 + 89;
-// const koalasTotalScore = 88 + 91 + 110;
-
-// const dolhpineAverageScore = dolhpineTotalScore / 3;
-// const koalasAverageScore = koalasTotalScore / 3;
-
-// if (dolhpineAverageScore > koalasAverageScore) {
-//     console.log("Congratulations Dolhpine's!");
-// } else if (dolhpineAverageScore < koalasAverageScore) {
-//     console.log('Congratulations Koalas!');
-// } else {
-//     (dolhpineAverageScore === koalasAverageScore);
-//     console.log("It's a tie!");
-// }
-
-// Bonus 1
-const dolhpineAverageScore = (97 + 112 + 81) / 3;
-const koalasAverageScore = (109 + 95 + 86) / 3;
-console.log(dolhpineAverageScore, koalasAverageScore);
-
-if (dolhpineAverageScore > koalasAverageScore && dolhpineAverageScore >= 100) {
-    console.log("Congratulations Dolhpine's!");
-} else if (dolhpineAverageScore < koalasAverageScore && koalasAverageScore >= 100) {
-    console.log('Congratulations Koalas!');
-} else if (dolhpineAverageScore === koalasAverageScore && dolhpineAverageScore >= 100 && koalasAverageScore >= 100) {
-    console.log("It's a tie!");
-} else {
-    console.log('No one win!');
-}
-
-
 
 
